@@ -2,287 +2,125 @@
 <html lang="en">
 
 <head>
-  <style>
-    /* 降低所有正文段落的行距 */
-    .content p {
-      line-height: 1.4;
-      /* 默认值通常在1.5到1.75之间。你可以尝试1.4或更小 */
-      margin-bottom: 0.75em;
-      /* 可选：适当调整段落间的底边距，防止段落过于拥挤 */
-    }
-
-    /* 可选：如果你想更进一步降低列表项的行距 */
-    .content ul li {
-      line-height: 1.4;
-    }
-  </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoRe4D: Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis</title>
 
-  <meta name="title"
-    content="[ICCV 2025] D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection">
   <meta name="description"
-    content="D³QE is a novel framework for detecting autoregressive-generated images by exploiting the distinctive patterns and frequency bias in the discrete latent codebook, achieving superior accuracy and generalization.">
+    content="MoRe4D: A unified framework for single-image 4D generation that tightly couples motion and geometry, overcoming the inherent weaknesses of decoupled paradigms.">
   <meta name="keywords"
-    content="Autoregressive Image Detection, Codebook Distribution Bias, Quantization Error, D3QE, ARForensics, ICCV 2025, computer vision, AI, machine learning">
-  <meta name="author"
-    content="Yanran Zhang, Bingyao Yu, Yu Zheng, Wenzhao Zheng, Yueqi Duan, Lei Chen, Jie Zhou, Jiwen Lu">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
+    content="4D Generation, Single Image to 4D, 3D Reconstruction, Diffusion Models, CVPR, Computer Vision, MoRe4D">
+  <meta name="author" content="Yanran Zhang, Ziyi Wang, Wenzhao Zheng, Zheng Zhu, Jie Zhou, Jiwen Lu">
 
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Tsinghua University">
-  <meta property="og:title"
-    content="D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection">
+  <meta property="og:title" content="MoRe4D: Joint 3D Geometry Reconstruction and Motion Generation">
   <meta property="og:description"
-    content="D³QE is a novel framework for detecting autoregressive-generated images by exploiting the distinctive patterns and frequency bias in the discrete latent codebook, achieving superior accuracy and generalization.">
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="D³QE - Research Preview">
-  <meta property="article:published_time" content="2025-10-01T00:00:00.000Z">
-  <meta property="article:author" content="Yanran Zhang">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="Autoregressive Image Detection">
-  <meta property="article:tag" content="Quantization Error">
+    content="Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
+  <meta property="og:image" content="static/images/social_preview.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <meta name="twitter:title"
-    content="D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection">
+  <meta name="twitter:title" content="MoRe4D: Joint 3D Geometry Reconstruction and Motion Generation">
   <meta name="twitter:description"
-    content="D³QE is a novel framework for detecting autoregressive-generated images by exploiting the distinctive patterns and frequency bias in the discrete latent codebook, achieving superior accuracy and generalization.">
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="D³QE - Research Preview">
-
-  <meta name="citation_title"
-    content="D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection">
-  <meta name="citation_author" content="Zhang, Yanran">
-  <meta name="citation_author" content="Yu, Bingyao">
-  <meta name="citation_publication_date" content="2025">
-  <meta name="citation_conference_title" content="ICCV">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/ftnfczwwqrhcpyzqbbqrfxbrdnpzcwyg.pdf">
-
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <title>D³QE - Yanran Zhang, Bingyao Yu et al. | Academic Research</title>
-
-  <link rel="icon" type="image/x-icon" href="static/images/d3qe.ico">
-  <link rel="apple-touch-icon" href="static/images/d3qe.ico">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
+    content="Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
+  <meta name="twitter:image" content="static/images/social_preview.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection",
-    "description": "D³QE is a novel framework for detecting autoregressive-generated images by exploiting the distinctive patterns and frequency bias in the discrete latent codebook, achieving superior accuracy and generalization.",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "Yanran Zhang",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Tsinghua University"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Bingyao Yu",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Tsinghua University"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Yu Zheng",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Tsinghua University"
-        }
-      }
-      // Add more authors as needed
-    ],
-    "datePublished": "2025-10-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "ICCV"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["Autoregressive Image Detection", "Codebook Distribution Bias", "Quantization Error", "D3QE", "ARForensics", "ICCV 2025", "machine learning", "computer vision"],
-    "abstract": "The emergence of visual autoregressive (AR) models has revolutionized image generation while presenting new challenges for synthetic image detection. Unlike previous GAN or diffusion-based methods, AR models generate images through discrete token prediction, exhibiting both marked improvements in image synthesis quality and unique characteristics in their vector-quantized representations. In this paper, we propose to leverage Discrete Distribution Discrepancy-aware Quantization Error (D³QE) for autoregressive-generated image detection that exploits the distinctive patterns and the frequency distribution bias of the codebook existing in real and fake images. We introduce a discrete distribution discrepancy-aware transformer that integrates dynamic codebook frequency statistics into its attention mechanism, fusing semantic features and quantization error latent. To evaluate our method, we construct a comprehensive dataset termed ARForensics covering 7 mainstream visual AR models. Experiments demonstrate superior detection accuracy and strong generalization of D³QE across different AR models, with robustness to real-world perturbations. Code is available at https://github.com/Zhangyr2022/D3QE.",
-    "citation": "@article{Zhang2025D3QE,\n  title={D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection},\n  author={Yanran Zhang and Bingyao Yu and Yu Zheng and Wenzhao Zheng and Yueqi Duan and Lei Chen and Jie Zhou and Jiwen Lu},\n  journal={ICCV},\n  year={2025},\n  url={https://YOUR-DOMAIN.com/YOUR-PROJECT-PAGE}\n}",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "Image Forensics"
-      },
-      {
-        "@type": "Thing", 
-        "name": "Autoregressive Models"
-      }
-    ]
-  }
-  </script>
+  <style>
+    /* Custom spacing for better readability */
+    .content p {
+      line-height: 1.5;
+      margin-bottom: 1em;
+    }
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Tsinghua University",
-    "url": "https://www.tsinghua.edu.cn/",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+    .hero-body {
+      padding-bottom: 1rem;
+    }
+
+    .publication-video {
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 
 <body>
 
-
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Yanran Zhang</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <a href="https://ivg-yanranzhang.github.io/UniPre3D/" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>UniPre3D: Unified Pre-training of 3D Point Cloud Models with Cross-Modal Gaussian Splatting</h5>
-            <p>UniPre3D is the first unified pre-training method for 3D point clouds that effectively handles both
-              object- and scene-level data through cross-modal Gaussian splatting.</p>
-            <span class="work-venue">CVPR 2025</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
+
     <section class="hero">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">D³QE: Learning Discrete Distribution Discrepancy-aware
-                Quantization Error for Autoregressive-Generated Image Detection</h1>
+              <h1 class="title is-1 publication-title">
+                Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image
+              </h1>
+
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                  <a href="mailto:zhangyr21@mails.tsinghua.edu.cn" target="_blank">Yanran Zhang</a><sup>*</sup>¹,</span>
+                  <a href="#" target="_blank">Yanran Zhang</a><sup>*1</sup>,
+                </span>
                 <span class="author-block">
-                  <a href="mailto:yuby@tsinghua.edu.cn" target="_blank">Bingyao Yu</a><sup>*,†</sup>¹,</span>
+                  <a href="#" target="_blank">Ziyi Wang</a><sup>*,1</sup>,
+                </span>
                 <span class="author-block">
-                  <a href="mailto:yu-zheng@tsinghua.edu.cn" target="_blank">Yu Zheng</a>¹</span>
+                  <a href="#" target="_blank">Wenzhao Zheng</a><sup>1</sup>,
+                </span>
                 <span class="author-block">
-                  <a href="mailto:wenzhao.zheng@outlook.com" target="_blank">Wenzhao Zheng</a>¹</span>
+                  <a href="#" target="_blank">Zheng Zhu</a><sup>2</sup>,
+                </span>
                 <span class="author-block">
-                  <a href="mailto:duanyueqi@tsinghua.edu.cn" target="_blank">Yueqi Duan</a>²</span>
+                  <a href="#" target="_blank">Jie Zhou</a><sup>1</sup>,
+                </span>
                 <span class="author-block">
-                  <a href="mailto:leichenthu@tsinghua.edu.cn" target="_blank">Lei Chen</a>¹</span>
-                <span class="author-block">
-                  <a href="mailto:jzhou@tsinghua.edu.cn" target="_blank">Jie Zhou</a>¹</span>
-                <span class="author-block">
-                  <a href="mailto:lujiwen@tsinghua.edu.cn" target="_blank">Jiwen Lu</a><sup>†</sup>¹</span>
+                  <a href="#" target="_blank">Jiwen Lu</a><sup>†,1</sup>
+                </span>
               </div>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block">¹ Department of Automation, Tsinghua University, China<br>² Department of
-                  Electronic Engineering, Tsinghua University, China<br>ICCV 2025</span>
-                <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution, <sup>†</sup>Corresponding
-                    Author</small></span>
+                <span class="author-block"><sup>1</sup>Department of Automation, Tsinghua University, China</span><br>
+                <span class="author-block"><sup>2</sup>GigaAI</span>
+                <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution, <sup>†</sup>Corresponding Author</small></span>
               </div>
 
               <div class="column has-text-centered">
                 <div class="publication-links">
                   <span class="link-block">
-                    <a href="static/pdfs/ftnfczwwqrhcpyzqbbqrfxbrdnpzcwyg.pdf" target="_blank"
+                    <a href="static/pdfs/paper.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
                       <span>Paper</span>
                     </a>
                   </span>
-
                   <span class="link-block">
-                    <a href="https://github.com/Zhangyr2022/D3QE" target="_blank"
+                    <a href="https://github.com/Zhangyr22/MoRe4D" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code</span>
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code </span>
                     </a>
                   </span>
-
                   <span class="link-block">
-                    <a href="http://arxiv.org/abs/2510.05891" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
+                    <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
                       <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#dataset" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-database"></i></span>
+                      <span>TrajScene-60K (Coming Soon)</span>
                     </a>
                   </span>
                 </div>
@@ -293,197 +131,153 @@
       </div>
     </section>
 
-
     <section class="hero teaser">
       <div class="container is-max-desktop">
-        <div class="hero-body">
-          <!-- <div class="is-centered">
-            <img src="static/images/d3qe_teaser.png" alt=" Discrete Distribution Discrepancy " loading="lazy" />
-            <img src="static/images/d3qe_vis.png" alt=" Discrete Distribution Discrepancy " loading="lazy" />
-          </div> -->
-          <div class="columns is-centered is-vcentered">
-            <div class="column is-half has-text-centered">
-              <img src="static/images/d3qe_teaser.png" alt="D³QE Pipeline Diagram" loading="lazy"
-                style="width: 80%; display: inline-block;">
-            </div>
-            <div class="column is-half has-text-centered">
-              <img src="static/images/d3qe_vis.png" alt="Codebook Activation Difference Visualization" loading="lazy"
-                style="width: 95%; display: inline-block;">
-            </div>
-          </div>
-          <h2 class="subtitle">
-            Our key insight is the stark distribution discrepancy in the discrete latent space of autoregressive(AR)
-            models.
-            Token distribution plots reveal the long-tail token usage in real data versus the concentrated,
-            high-frequency bias in fakes. This is confirmed by codebook activation heatmaps, which show a balanced
-            pattern for real images but polarized hotspots for fakes—the core artifact for our detection method.
+        <div class="hero-body has-text-centered">
+          <img src="static/images/figure1_teaser.png" alt="MoRe4D Teaser"
+            style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+          <h2 class="subtitle has-text-justified">
+            <b>MoRe4D</b> generates interactive, dynamic 4D scenes from a single static image.
+            Unlike previous paradigms that decouple generation and reconstruction (leading to geometric
+            inconsistencies),
+            we tightly couple geometric modeling and motion generation, achieving consistent 4D motion and geometry.
           </h2>
         </div>
       </div>
     </section>
+
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3 has-text-centered">Abstract</h2>
+            <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                The emergence of visual autoregressive (AR) models has revolutionized image generation while
-                presenting new challenges for synthetic image detection. Unlike previous GAN or
-                diffusion-based methods, AR models generate images through discrete token prediction, exhibiting both
-                marked improvements in image synthesis quality and unique characteristics in their vector-quantized
-                representations. In this paper, we propose to leverage <b>Discrete Distribution
-                  Discrepancy-aware Quantization Error</b> <b>D³QE</b> for autoregressive-generated image
-                detection that exploits the distinctive patterns and the frequency distribution bias of the codebook
-                existing in real and fake images. We introduce a <b>discrete distribution
-                  discrepancy-aware transformer</b> that integrates dynamic codebook frequency statistics into its
-                attention mechanism, fusing semantic features and quantization error latent. To evaluate our
-                method, we construct a comprehensive dataset termed <b>ARForensics</b> covering 7 mainstream visual AR
-                models. Experiments demonstrate superior detection accuracy and strong
-                generalization of D³QE across different AR models, with robustness to real-world
-                perturbations.
+                Generating interactive, dynamic 4D scenes from a single static image remains a core challenge. Most
+                existing
+                methods decouple geometry from motion (either generate-then-reconstruct or reconstruct-then-generate),
+                causing spatiotemporal inconsistencies and poor generalization.
+              </p>
+              <p>
+                To overcome these limitations, we extend the reconstruct-then-generate framework to jointly couple
+                Motion
+                generation with geometric Reconstruction for 4D Synthesis (<b>MoRe4D</b>). We first introduce
+                <b>TrajScene-60K</b>,
+                a large-scale dataset of 60,000 video samples with dense point trajectories, addressing the scarcity of
+                high-quality
+                4D scene data. Based on this, we propose a diffusion-based <b>4D Scene Trajectory Generator
+                  (4D-STraG)</b> to jointly
+                generate geometrically consistent and motion-plausible 4D point trajectories.
+              </p>
+              <p>
+                To leverage single-view priors, we design a depth-guided motion normalization strategy and a
+                motion-aware module
+                in 4D-STraG for effective geometry and dynamics integration. We then propose a <b>4D View Synthesis
+                  Module (4D-ViSM)</b>
+                to render videos with arbitrary camera trajectories from 4D point track representations. Experiments
+                show that MoRe4D
+                generates high-quality 4D scenes with multi-view consistency and rich dynamic details from a single
+                image.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <hr>
+
     <section class="section">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3 has-text-centered">Introduction</h2>
-
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Methodology: Unified 4D Synthesis</h2>
+            <div class="content has-text-centered">
+              <img src="static/images/figure3_pipeline.png" alt="MoRe4D Pipeline"
+                style="width: 100%; margin-bottom: 20px;">
+            </div>
             <div class="content has-text-justified">
               <p>
-                Autoregressive (AR) models create forgeries in the <b>discrete latent space</b> via <b>discrete token
-                  prediction</b>, evading conventional detectors. We observe a strong <b>Discrete Distribution
-                  Discrepancy</b>: real images follow a <b>long-tail token distribution</b>, while fakes concentrate
-                probability in high-frequency regions, showing polarized codebook usage.
+                Our framework consists of two core components designed to ensure both geometric stability and dynamic
+                realism:
               </p>
-
-              <h4 class="title is-5">Our Main Contributions:</h4>
               <ul>
-                <li><b>D³QE Framework:</b> Analyzes the <b>codebook distribution bias</b> and <b>quantization error</b>
-                  from AR generation.</li>
-                <li><b>D³AT Transformer:</b> Features <b>Discrepancy-Aware Self-Attention</b> (D³ASA), integrating
-                  codebook statistics (ΔD) to fuse quantization error with semantic features.</li>
-                <li><b>ARForensics Benchmark:</b> The first dataset for AR-generated image detection, covering <b>7
-                    mainstream models</b> to test generalization.</li>
+                <li>
+                  <b>4D Scene Trajectory Generator (4D-STraG):</b> A joint diffusion model that simultaneously
+                  reconstructs and generates spatiotemporal point trajectories. It utilizes a <b>Depth-Guided Motion
+                    Normalization</b> to ensure scale invariance and a <b>Motion Perception Module (MPM)</b> to inject
+                  rich motion priors from the input image.
+                </li>
+                <li>
+                  <b>4D View Synthesis Module (4D-ViSM):</b> Leveraging the dense 4D point cloud representation, this
+                  module synthesizes high-fidelity novel view videos, filling in dis-occluded regions coherently using
+                  generative priors.
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <hr>
 
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3 has-text-centered">Dataset Visualization</h2>
-          <div class="content has-text-centered">
-            <p>
-              The <b>ARForensics</b> dataset contains samples from 7 mainstream AR models ( <b>LlamaGen, VAR,
-                Infinity,
-                Janus-Pro, RAR, Switti, Open-MAGVIT2</b>), serving as a robust visual benchmark for testing the
-              generalization of ai-generated image detection models.
+    <section class="section hero is-light" id="dataset">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">TrajScene-60K Dataset</h2>
+            <div class="content has-text-centered">
+              <img src="static/images/figure2_dataset.png" alt="TrajScene-60K Curation"
+                style="width: 100%; margin-bottom: 20px;">
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                To address the data scarcity for 4D generation, we present <b>TrajScene-60K</b>, a large-scale dataset
+                containing:
+              </p>
+              <ul>
+                <li><b>60,000 High-Quality Samples:</b> Curated from WebVid-10M using VLM-based filtering (CogVLM2 &
+                  DeepSeek-V3) to ensure meaningful, countable, and self-initiated motion.</li>
+                <li><b>Dense Annotations:</b> Includes dense 4D point trajectories, per-frame depth maps, and occlusion
+                  masks extracted via DELTA tracking and Gaussian Splatting rendering.</li>
+                <li><b>Rich Semantics:</b> Paired with high-quality captions describing both scene content and dynamic
+                  behavior.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h4 class="title is-4">Comparison with State-of-the-Art</h4>
+            <img src="static/images/figure5_comparison.png" alt="Comparison with SOTA"
+              style="width: 100%; margin-bottom: 10px;">
+            <p class="has-text-centered is-size-6">
+              Visual comparison with 4Real, DimensionX, Gen3C, and Free4D. MoRe4D produces more diverse motion and
+              preserves structural consistency better than decoupled approaches.
             </p>
           </div>
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <div class="publication-video">
-                <video src="static/videos/data.mp4" type="video/mp4"></video>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <hr>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
+        <br>
+
         <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3 has-text-centered">Methodology</h2>
-            <div class="content has-text-justified">
-              <img src="static/images/d3qe_pipe.png" alt="D3QE Pipeline" loading="lazy" />
-
-              <p>
-                The D³QE framework fuses local discrete artifacts with global semantic features through four key
-                components:
-              <ol>
-                <li><b>Quantization Error Representation:</b> A frozen <b>VQVAE Encoder</b> extracts the error between
-                  the continuous latent map z and its discrete representation z_q.</li>
-                <li><b>Discrete Distribution Statistics:</b> Computes the <b>discrete distribution discrepancy</b> (ΔD)
-                  from real vs. fake token usage statistics.</li>
-                <li><b>D³AT Transformer:</b> Its core <b>Discrepancy-Aware Self-Attention</b> (D³ASA) module processes
-                  the quantization error, guided by global ΔD.</li>
-                <li><b>Semantic Feature Fusion:</b> A frozen <b>CLIP</b> extracts semantic features, which are fused
-                  with the D³AT's output for final classification.</li>
-              </ol>
-              </p>
-            </div>
+          <div class="column is-full-width">
+            <h4 class="title is-4">Multi-View & Trajectory Generation</h4>
+            <img src="static/images/figure4_qualitative.png" alt="Multi-view Generation"
+              style="width: 100%; margin-bottom: 10px;">
+            <p class="has-text-centered is-size-6">
+              Our model generates consistent 4D point clouds (Top) and renders high-quality videos under arbitrary
+              camera trajectories (Middle/Bottom).
+            </p>
           </div>
         </div>
+
       </div>
     </section>
-
-
-
-
-    <hr>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3 has-text-centered">Experiments</h2>
-            <div class="content has-text-justified">
-              <p>
-                We evaluate D³QE extensively on our proposed <b>ARForensics</b> benchmark, demonstrating
-                its superior performance in both intra-model testing and cross-model generalization.
-              </p>
-              <img src="static/images/d3qe_ar.png" alt="D³QE Results" loading="lazy"
-                style="width: 90%; display: inline-block;">
-              <p>
-                The model's generalization to GAN-generated images is assessed on ForenSynths.
-              </p>
-              <img src="static/images/d3qe_gan.png" alt="D³QE Results" loading="lazy"
-                style="width: 90%; display: inline-block;">
-              <p>
-                Its generalization to Diffusion-based images is evaluated on the GenImage dataset.
-              </p>
-              <img src="static/images/d3qe_diffusion.png" alt="D³QE Results" loading="lazy"
-                style="width: 90%; display: inline-block;">
-              <p>
-                We also evaluate the model's robustness under common real-world corruptions, such as JPEG
-                compression and Gaussian blurring.
-              </p>
-              <img src="static/images/d3qe_robustness.png" alt="D³QE Results" loading="lazy"
-                style="width: 90%; display: inline-block;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr>
-
-
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container">
-          <h2 class="title">Poster</h2>
-
-          <iframe src="static/pdfs/poster.pdf" width="100%" height="550">
-          </iframe>
-
-        </div>
-      </div>
-    </section>
-    <hr>
-
 
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
@@ -494,38 +288,32 @@
             <span class="copy-text">Copy</span>
           </button>
         </div>
-        <pre id="bibtex-code"><code>
-@article{zhang2025d3qe,
-  title={$$\backslash$bf $\{$D\^{} 3$\}$ $ QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection},
-  author={Zhang, Yanran and Yu, Bingyao and Zheng, Yu and Zheng, Wenzhao and Duan, Yueqi and Chen, Lei and Zhou, Jie and Lu, Jiwen},
-  journal={arXiv preprint arXiv:2510.05891},
+        <pre id="bibtex-code"><code>@article{zhang2025more4d,
+  title={Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image},
+  author={Zhang, Yanran and Wang, Ziyi and Zheng, Wenzhao and Zhu, Zheng and Zhou, Jie and Lu, Jiwen},
+  journal={arXiv preprint},
   year={2025}
-}
-</code></pre>
+}</code></pre>
       </div>
     </section>
+
     <footer class="footer">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-8">
-            <div class="content">
-
+            <div class="content has-text-centered">
               <p>
-                This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                  target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                  href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-                You are free to borrow the source code of this website, we just ask that you link back to this page in
-                the footer. <br> This website is licensed under a <a rel="license"
-                  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-                  Commons Attribution-ShareAlike 4.0 International License</a>.
+                This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                Template adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
               </p>
-
             </div>
           </div>
         </div>
       </div>
     </footer>
 
+  </main>
 </body>
 
 </html>
