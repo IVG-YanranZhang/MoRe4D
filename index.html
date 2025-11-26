@@ -92,7 +92,8 @@
               <div class="is-size-5 publication-authors">
                 <span class="author-block"><sup>1</sup>Department of Automation, Tsinghua University, China</span><br>
                 <span class="author-block"><sup>2</sup>GigaAI</span>
-                <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution, <sup>†</sup>Corresponding Author</small></span>
+                <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution, <sup>†</sup>Corresponding
+                    Author</small></span>
               </div>
 
               <div class="column has-text-centered">
@@ -134,7 +135,7 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body has-text-centered">
-          <img src="static/images/figure1_teaser.png" alt="MoRe4D Teaser"
+          <img src="static/images/teaser.png" alt="MoRe4D Teaser"
             style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
           <h2 class="subtitle has-text-justified">
             <b>MoRe4D</b> generates interactive, dynamic 4D scenes from a single static image.
@@ -191,8 +192,7 @@
           <div class="column is-full-width">
             <h2 class="title is-3 has-text-centered">Methodology: Unified 4D Synthesis</h2>
             <div class="content has-text-centered">
-              <img src="static/images/figure3_pipeline.png" alt="MoRe4D Pipeline"
-                style="width: 100%; margin-bottom: 20px;">
+              <img src="static/images/pipeline.png" alt="MoRe4D Pipeline" style="width: 100%; margin-bottom: 20px;">
             </div>
             <div class="content has-text-justified">
               <p>
@@ -224,7 +224,7 @@
           <div class="column is-full-width">
             <h2 class="title is-3 has-text-centered">TrajScene-60K Dataset</h2>
             <div class="content has-text-centered">
-              <img src="static/images/figure2_dataset.png" alt="TrajScene-60K Curation"
+              <img src="static/images/dataset.png" alt="TrajScene-60K Curation"
                 style="width: 100%; margin-bottom: 20px;">
             </div>
             <div class="content has-text-justified">
@@ -249,11 +249,24 @@
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h4 class="title is-4">Multi-View & Trajectory Generation</h4>
+            <img src="static/images/qualitative_1.png" alt="Multi-view Generation"
+              style="width: 100%; margin-bottom: 10px;">
+            <img src="static/images/qualitative_2.png" alt="Multi-view Generation"
+              style="width: 100%; margin-bottom: 10px;">
+            <p class="has-text-centered is-size-6">
+              Our model generates consistent 4D point clouds (Top) and renders high-quality videos under arbitrary
+              camera trajectories (Bottom).
+            </p>
+          </div>
+        </div>
 
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h4 class="title is-4">Comparison with State-of-the-Art</h4>
-            <img src="static/images/figure5_comparison.png" alt="Comparison with SOTA"
+            <h4 class="title is-4">Comparison with State-of-the-Art Single-Image-to-4D methods</h4>
+            <img src="static/images/qualitative_3.png" alt="Comparison with SOTA"
               style="width: 100%; margin-bottom: 10px;">
             <p class="has-text-centered is-size-6">
               Visual comparison with 4Real, DimensionX, Gen3C, and Free4D. MoRe4D produces more diverse motion and
@@ -264,17 +277,7 @@
 
         <br>
 
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h4 class="title is-4">Multi-View & Trajectory Generation</h4>
-            <img src="static/images/figure4_qualitative.png" alt="Multi-view Generation"
-              style="width: 100%; margin-bottom: 10px;">
-            <p class="has-text-centered is-size-6">
-              Our model generates consistent 4D point clouds (Top) and renders high-quality videos under arbitrary
-              camera trajectories (Middle/Bottom).
-            </p>
-          </div>
-        </div>
+
 
       </div>
     </section>
