@@ -4,22 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MoRe4D: Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis</title>
+  <title>Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image</title>
 
   <meta name="description"
-    content="MoRe4D: A unified framework for single-image 4D generation that tightly couples motion and geometry, overcoming the inherent weaknesses of decoupled paradigms.">
+    content="A joint framework for single-image 4D generation that tightly couples motion and geometry, overcoming the inherent weaknesses of decoupled paradigms.">
   <meta name="keywords"
-    content="4D Generation, Single Image to 4D, 3D Reconstruction, Diffusion Models, CVPR, Computer Vision, MoRe4D">
+    content="4D Generation, Single Image to 4D, 3D Reconstruction, Diffusion Models">
   <meta name="author" content="Yanran Zhang, Ziyi Wang, Wenzhao Zheng, Zheng Zhu, Jie Zhou, Jiwen Lu">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="MoRe4D: Joint 3D Geometry Reconstruction and Motion Generation">
+  <meta property="og:title" content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image">
   <meta property="og:description"
     content="Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
   <meta property="og:image" content="static/images/social_preview.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MoRe4D: Joint 3D Geometry Reconstruction and Motion Generation">
+  <meta name="twitter:title" content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image">
   <meta name="twitter:description"
     content="Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
   <meta name="twitter:image" content="static/images/social_preview.png">
@@ -255,6 +255,151 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- New Gallery Section -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Generated Samples</h2>
+        
+        <!-- Column Headers -->
+        <div class="columns is-centered has-text-centered is-hidden-mobile" style="margin-bottom: 1rem;">
+          <div class="column is-4">
+            <h4 class="title is-5">Input</h4>
+          </div>
+          <div class="column is-4">
+            <h4 class="title is-5">4D-STraG</h4>
+          </div>
+          <div class="column is-4">
+            <h4 class="title is-5">4D-ViSM</h4>
+          </div>
+        </div>
+
+        <!-- Row 1: Camel -->
+        <div class="columns is-vcentered is-centered" style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
+          <!-- Input Column -->
+          <div class="column is-4 has-text-centered">
+            <figure class="image is-inline-block" style="width: 100%; margin-bottom: 0.5rem;">
+              <!-- TODO: Check extension (jpg/png) -->
+              <img src="static/demo_videos/camel/input.jpg" alt="Camel Input" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </figure>
+            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
+              <p><b>Prompt:</b> A camel walking across the desert dunes under a clear sky.</p>
+            </div>
+          </div>
+          
+          <!-- 4D-STraG Column -->
+          <div class="column is-4 has-text-centered">
+            <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <source src="static/demo_videos/camel/4D-STraG_output.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 4D-ViSM Column (Carousel) -->
+          <div class="column is-4 has-text-centered">
+            <div class="carousel results-carousel">
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/camel/4D-ViSM_output/1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/camel/4D-ViSM_output/2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/camel/4D-ViSM_output/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Cat -->
+        <div class="columns is-vcentered is-centered" style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
+          <!-- Input Column -->
+          <div class="column is-4 has-text-centered">
+            <figure class="image is-inline-block" style="width: 100%; margin-bottom: 0.5rem;">
+              <img src="static/demo_videos/cat/input.jpg" alt="Cat Input" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </figure>
+            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
+              <p><b>Prompt:</b> A cute cat sitting on the grass, looking around curiously.</p>
+            </div>
+          </div>
+          
+          <!-- 4D-STraG Column -->
+          <div class="column is-4 has-text-centered">
+            <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <source src="static/demo_videos/cat/4D-STraG_output.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 4D-ViSM Column (Carousel) -->
+          <div class="column is-4 has-text-centered">
+            <div class="carousel results-carousel">
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/cat/4D-ViSM_output/1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/cat/4D-ViSM_output/2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/cat/4D-ViSM_output/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Rhino -->
+        <div class="columns is-vcentered is-centered" style="margin-bottom: 1rem;">
+          <!-- Input Column -->
+          <div class="column is-4 has-text-centered">
+            <figure class="image is-inline-block" style="width: 100%; margin-bottom: 0.5rem;">
+              <img src="static/demo_videos/rhino/input.jpg" alt="Rhino Input" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </figure>
+            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
+              <p><b>Prompt:</b> A rhinoceros standing in the savanna, moving its head slowly.</p>
+            </div>
+          </div>
+          
+          <!-- 4D-STraG Column -->
+          <div class="column is-4 has-text-centered">
+            <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <source src="static/demo_videos/rhino/4D-STraG_output.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 4D-ViSM Column (Carousel) -->
+          <div class="column is-4 has-text-centered">
+            <div class="carousel results-carousel">
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/rhino/4D-ViSM_output/1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/rhino/4D-ViSM_output/2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/rhino/4D-ViSM_output/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
