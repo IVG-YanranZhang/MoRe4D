@@ -287,6 +287,37 @@
       </div>
     </section>
 
+
+    <section class="section hero is-light" id="dataset">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">TrajScene-60K Dataset</h2>
+            <div class="content has-text-centered">
+              <img src="static/images/dataset.png" alt="TrajScene-60K Curation"
+                style="width: 85%; margin-bottom: 20px;">
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                To address the data scarcity for 4D generation, we present <b>TrajScene-60K</b>, a large-scale dataset
+                containing:
+              </p>
+              <ul>
+                <li><b>60,000 High-Quality Samples:</b> Curated from WebVid-10M using VLM-based filtering (CogVLM2 &
+                  DeepSeek-V3) to ensure meaningful, countable, and self-initiated motion.</li>
+                <li><b>Dense Annotations:</b> Includes dense 4D point trajectories, per-frame depth maps, and occlusion
+                  masks extracted via DELTA tracking and Gaussian Splatting rendering.</li>
+                <li><b>Rich Semantics:</b> Paired with high-quality captions describing both scene content and dynamic
+                  behavior.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
     <!-- New Gallery Section -->
     <section class="section">
       <div class="container is-max-desktop">
@@ -482,34 +513,6 @@
       </div>
     </section>
 
-    <section class="section hero is-light" id="dataset">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3 has-text-centered">TrajScene-60K Dataset</h2>
-            <div class="content has-text-centered">
-              <img src="static/images/dataset.png" alt="TrajScene-60K Curation"
-                style="width: 85%; margin-bottom: 20px;">
-            </div>
-            <div class="content has-text-justified">
-              <p>
-                To address the data scarcity for 4D generation, we present <b>TrajScene-60K</b>, a large-scale dataset
-                containing:
-              </p>
-              <ul>
-                <li><b>60,000 High-Quality Samples:</b> Curated from WebVid-10M using VLM-based filtering (CogVLM2 &
-                  DeepSeek-V3) to ensure meaningful, countable, and self-initiated motion.</li>
-                <li><b>Dense Annotations:</b> Includes dense 4D point trajectories, per-frame depth maps, and occlusion
-                  masks extracted via DELTA tracking and Gaussian Splatting rendering.</li>
-                <li><b>Rich Semantics:</b> Paired with high-quality captions describing both scene content and dynamic
-                  behavior.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
@@ -543,6 +546,28 @@
           </div>
         </div>
 
+        <section class="section">
+          <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">Quantitative Analysis</h2>
+
+            <div class="content has-text-justified">
+              <p>
+                We perform a comprehensive quantitative evaluation using VBench.
+                Following the protocol in Free4D, comparisons are structured into three groups based on
+                model availability and trajectory complexity.
+                Our method consistently achieves superior performance, particularly in dynamic degree and visual
+                quality metrics.
+              </p>
+            </div>
+            <div class="column is-full-width">
+              <div class="content has-text-centered">
+                <img src="static/images/quantitative.png" alt="Comparison with SOTA"
+                  style="width: 85%; margin-bottom: 10px;">
+              </div>
+            </div>
+
+          </div>
+        </section>
         <br>
 
 
