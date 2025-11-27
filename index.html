@@ -63,6 +63,21 @@
     }
   </style>
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof bulmaCarousel !== 'undefined') {
+      bulmaCarousel.attach('.carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        loop: true,
+        navigation: true,
+        pagination: true
+      });
+    } else {
+      console.error('bulmaCarousel 未加载');
+    }
+  });
+</script>
 
 <body>
 
