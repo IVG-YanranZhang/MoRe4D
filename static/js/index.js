@@ -133,7 +133,16 @@ $(document).ready(function() {
 
 	// Initialize all div with carousel class
     var carousels = bulmaCarousel.attach('.carousel', options);
-	
+    document.addEventListener('DOMContentLoaded', function() {
+    bulmaCarousel.attach('#camel-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1
+    });
+    bulmaCarousel.attach('#rhino-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1
+    });
+    });
     bulmaSlider.attach();
     
     // Setup video autoplay for carousel
