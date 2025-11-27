@@ -35,12 +35,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
+  <!-- 添加这两行 Carousel 必需的样式文件 -->
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <!-- 确保 bulma-carousel 脚本被加载 -->
   <script defer src="static/js/bulma-carousel.min.js"></script>
 
   <style>
@@ -331,9 +335,8 @@
         </div>
 
         <!-- Row 2: Cat -->
-        <div class="columns is-vcentered is-centered"
+        <!-- <div class="columns is-vcentered is-centered"
           style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
-          <!-- Input Column -->
           <div class="column is-4 has-text-centered">
             <figure class="image is-inline-block" style="width: 100%; margin-bottom: 0.5rem;">
               <img src="static/demo_videos/cat/Input.png" alt="Cat Input"
@@ -344,7 +347,6 @@
             </div>
           </div>
 
-          <!-- 4D-STraG Column -->
           <div class="column is-4 has-text-centered">
             <video autoplay controls muted loop playsinline width="100%"
               style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
@@ -352,7 +354,6 @@
             </video>
           </div>
 
-          <!-- 4D-ViSM Column (Carousel) -->
           <div class="column is-4 has-text-centered">
             <div id="cat-carousel" class="carousel results-carousel">
               <div class="item">
@@ -372,7 +373,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <!-- Row 3: Rhino -->
         <div class="columns is-vcentered is-centered" style="margin-bottom: 1rem;">
@@ -383,7 +384,7 @@
                 style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </figure>
             <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
-              <p><b>Prompt:</b> A rhinoceros standing in the savanna, moving slowly.</p>
+              <p><b>Prompt:</b> A grey rhino strolls peacefully through the dappled sunlight.</p>
             </div>
           </div>
 
