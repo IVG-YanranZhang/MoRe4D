@@ -70,7 +70,7 @@
         slidesToScroll: 1,
         slidesToShow: 1,
         // : true,
-        
+
         navigation: true,
         pagination: true
       });
@@ -305,24 +305,70 @@
           </div>
         </div>
 
+        <div class="columns is-vcentered is-centered"
+          style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
+          <!-- Input Column -->
+          <div class="column is-4 has-text-centered">
+            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
+              <p><b>Prompt:</b> A brown bear walks across rocky terrain.</p>
+            </div>
+            <figure class="image is-inline-block" style="width: 80%; margin-bottom: 0.5rem;">
+              <!-- TODO: Check extension (jpg/png) -->
+              <img src="static/demo_videos/bear/Input.png" alt="bear Input"
+                style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </figure>
+
+          </div>
+
+          <!-- 4D-STraG Column -->
+          <div class="column is-4 has-text-centered">
+            <video controls muted playsinline width="80%"
+              style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <source src="static/demo_videos/bear/4D-STraG_output/bear_render.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 4D-ViSM Column (Carousel) -->
+          <div class="column is-4 has-text-centered">
+            <div id="bear-carousel" class="carousel results-carousel">
+              <div class="item">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/bear/4D-ViSM_output/1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/bear/4D-ViSM_output/2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/bear/4D-ViSM_output/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Row 1: Camel -->
         <div class="columns is-vcentered is-centered"
           style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
           <!-- Input Column -->
           <div class="column is-4 has-text-centered">
+            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
+              <p><b>Prompt:</b> A camel walks along a path in a sunny zoo enclosure.</p>
+            </div>
             <figure class="image is-inline-block" style="width: 80%; margin-bottom: 0.5rem;">
               <!-- TODO: Check extension (jpg/png) -->
               <img src="static/demo_videos/camel/Input.png" alt="Camel Input"
                 style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </figure>
-            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
-              <p><b>Prompt:</b> A camel walks along a path in a sunny zoo enclosure.</p>
-            </div>
+
           </div>
 
           <!-- 4D-STraG Column -->
           <div class="column is-4 has-text-centered">
-            <video controls muted  playsinline width="80%"
+            <video controls muted playsinline width="80%"
               style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
               <source src="static/demo_videos/camel/4D-STraG_output/camel_render.mp4" type="video/mp4">
             </video>
@@ -332,17 +378,17 @@
           <div class="column is-4 has-text-centered">
             <div id="camel-carousel" class="carousel results-carousel">
               <div class="item">
-                <video controls muted  playsinline width="100%" style="border-radius: 8px;">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
                   <source src="static/demo_videos/camel/4D-ViSM_output/1.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
                   <source src="static/demo_videos/camel/4D-ViSM_output/2.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
                   <source src="static/demo_videos/camel/4D-ViSM_output/3.mp4" type="video/mp4">
                 </video>
               </div>
@@ -395,18 +441,18 @@
         <div class="columns is-vcentered is-centered" style="margin-bottom: 1rem;">
           <!-- Input Column -->
           <div class="column is-4 has-text-centered">
+            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
+              <p><b>Prompt:</b> A grey rhino strolls peacefully through the dappled sunlight.</p>
+            </div>
             <figure class="image is-inline-block" style="width: 70%; margin-bottom: 0.5rem;">
               <img src="static/demo_videos/rhino/Input.png" alt="Rhino Input"
                 style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </figure>
-            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.75rem;">
-              <p><b>Prompt:</b> A grey rhino strolls peacefully through the dappled sunlight.</p>
-            </div>
           </div>
 
           <!-- 4D-STraG Column -->
           <div class="column is-4 has-text-centered">
-            <video  controls muted  playsinline width="80%"
+            <video controls muted playsinline width="80%"
               style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
               <source src="static/demo_videos/rhino/4D-STraG_output/rhino_render.mp4" type="video/mp4">
             </video>
@@ -416,17 +462,17 @@
           <div class="column is-4 has-text-centered">
             <div id="rhino-carousel" class="carousel results-carousel">
               <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/rhino/4D-ViSM_output/1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
                   <source src="static/demo_videos/rhino/4D-ViSM_output/2.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
+                  <source src="static/demo_videos/rhino/4D-ViSM_output/1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item">
+                <video controls muted playsinline width="100%" style="border-radius: 8px;">
                   <source src="static/demo_videos/rhino/4D-ViSM_output/4.mp4" type="video/mp4">
                 </video>
               </div>
@@ -471,8 +517,8 @@
           <div class="column is-full-width">
             <h4 class="title is-4">Multi-View & Trajectory Generation</h4>
             <div class="content has-text-centered">
-              <img src="static/images/qualitative_1.png" alt="Multi-view Generation"
-                style="width: 85%; margin-bottom: 10px;">
+              <!-- <img src="static/images/qualitative_1.png" alt="Multi-view Generation"
+                style="width: 85%; margin-bottom: 10px;"> -->
               <img src="static/images/qualitative_2.png" alt="Multi-view Generation"
                 style="width: 85%; margin-bottom: 10px;">
             </div>
