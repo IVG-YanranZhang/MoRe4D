@@ -4,25 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image</title>
+  <!-- 优化 title，确保关键词在前 -->
+  <title>Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis | MoRe4D</title>
 
+  <!-- 优化 description，包含关键词 -->
   <meta name="description"
-    content="A joint framework for single-image 4D generation that tightly couples motion and geometry, overcoming the inherent weaknesses of decoupled paradigms.">
-  <meta name="keywords" content="4D Generation, Single Image to 4D, 3D Reconstruction, Diffusion Models">
+    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image. A joint framework for single-image 4D generation coupling motion and geometry.">
+  <!-- 添加更多相关关键词 -->
+  <meta name="keywords"
+    content="Joint 3D Geometry Reconstruction, Motion Generation, 4D Synthesis, Single Image to 4D, 4D Generation, MoRe4D, 3D Reconstruction, Diffusion Models, 4D Scene Generation">
+
   <meta name="author" content="Yanran Zhang, Ziyi Wang, Wenzhao Zheng, Zheng Zhu, Jie Zhou, Jiwen Lu">
 
   <meta property="og:type" content="article">
   <meta property="og:title"
     content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image">
   <meta property="og:description"
-    content="Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
+    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image. Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
   <meta property="og:image" content="static/images/social_preview.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title"
     content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image">
   <meta name="twitter:description"
-    content="Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
+    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image. Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
   <meta name="twitter:image" content="static/images/social_preview.png">
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
@@ -46,7 +51,37 @@
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/index.js"></script>
-
+  <!-- 添加结构化数据 (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image",
+    "alternativeHeadline": "MoRe4D: Unified Framework for 4D Scene Generation",
+    "description": "A joint framework for single-image 4D generation that tightly couples motion and geometry, overcoming the inherent weaknesses of decoupled paradigms.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Yanran Zhang",
+        "affiliation": "Tsinghua University"
+      },
+      {
+        "@type": "Person",
+        "name": "Ziyi Wang",
+        "affiliation": "Tsinghua University"
+      },
+      {
+        "@type": "Person",
+        "name": "Wenzhao Zheng",
+        "affiliation": "Tsinghua University"
+      }
+    ],
+    "datePublished": "2025-12-05",
+    "keywords": "Joint 3D Geometry Reconstruction, Motion Generation, 4D Synthesis, Single Image to 4D",
+    "url": "https://arxiv.org/abs/2512.05044",
+    "image": "https://arxiv.org/abs/2512.05044"
+  }
+  </script>
   <style>
     /* Custom spacing for better readability */
     .content p {
@@ -127,6 +162,36 @@
   </div>
 
   <main id="main-content">
+    <!-- 在 main 开始处添加 -->
+    <nav class="breadcrumb" aria-label="breadcrumbs" style="padding: 1rem 0;">
+      <div class="container is-max-desktop">
+        <ul>
+          <li><a href="https://ivg-yanranzhang.github.io/MoRe4D/">Home</a></li>
+          <li><a href="#">Research</a></li>
+          <li class="is-active"><a href="#" aria-current="page">Joint 3D Geometry Reconstruction and Motion
+              Generation</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 添加对应的结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Research",
+        "item": "https://yourusername.github.io"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Joint 3D Geometry Reconstruction and Motion Generation",
+        "item": "https://yourusername.github.io/MoRe4D-web/"
+      }]
+    }
+    </script>
 
     <section class="hero">
       <div class="hero-body">
@@ -184,13 +249,15 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://arxiv.org/abs/2512.05044" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://arxiv.org/abs/2512.05044" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
                       <span class="icon"><i class="ai ai-arxiv"></i></span>
                       <span>arXiv</span>
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="#dataset" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://github.com/Zhangyr2022/MoRe4D"
+                      class="external-link button is-normal is-rounded is-dark">
                       <span class="icon"><i class="fas fa-database"></i></span>
                       <span>TrajScene-60K (Coming Soon)</span>
                     </a>
@@ -206,7 +273,8 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body has-text-centered">
-          <img src="static/images/teaser.png" alt="MoRe4D Teaser"
+          <img src="static/images/teaser.png"
+            alt="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image"
             style="width: 85%; border-radius: 10px; margin-bottom: 20px;">
           <h2 class="subtitle has-text-justified">
             <b>MoRe4D</b> generates interactive, dynamic 4D scenes from a single static image.
@@ -261,7 +329,9 @@
           <div class="column is-full-width">
             <h2 class="title is-3 has-text-centered">Methodology: Unified 4D Synthesis</h2>
             <div class="content has-text-centered">
-              <img src="static/images/pipeline.png" alt="MoRe4D Pipeline" style="width: 90%; margin-bottom: 20px;">
+              <img src="static/images/pipeline.png"
+                alt="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image"
+                style="width: 90%; margin-bottom: 20px;">
             </div>
             <div class="content has-text-justified">
               <p>
@@ -294,7 +364,8 @@
           <div class="column is-full-width">
             <h2 class="title is-3 has-text-centered">TrajScene-60K Dataset</h2>
             <div class="content has-text-centered">
-              <img src="static/images/dataset.png" alt="TrajScene-60K Curation"
+              <img src="static/images/dataset.png"
+                alt="TrajScene-60K Curation (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
                 style="width: 85%; margin-bottom: 20px;">
             </div>
             <div class="content has-text-justified">
@@ -345,7 +416,8 @@
             </div>
             <figure class="image is-inline-block" style="width: 70%; margin-bottom: 0.5rem;">
               <!-- TODO: Check extension (jpg/png) -->
-              <img src="static/demo_videos/bear/Input.png" alt="bear Input"
+              <img src="static/demo_videos/bear/Input.png"
+                alt="bear Input (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
                 style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </figure>
 
@@ -391,7 +463,8 @@
             </div>
             <figure class="image is-inline-block" style="width: 80%; margin-bottom: 0.5rem;">
               <!-- TODO: Check extension (jpg/png) -->
-              <img src="static/demo_videos/camel/Input.png" alt="Camel Input"
+              <img src="static/demo_videos/camel/Input.png"
+                alt="Camel Input (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
                 style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </figure>
 
@@ -476,7 +549,8 @@
               <p><b>Prompt:</b> A grey rhino strolls peacefully through the dappled sunlight.</p>
             </div>
             <figure class="image is-inline-block" style="width: 70%; margin-bottom: 0.5rem;">
-              <img src="static/demo_videos/rhino/Input.png" alt="Rhino Input"
+              <img src="static/demo_videos/rhino/Input.png"
+                alt="Rhino Input (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
                 style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </figure>
           </div>
@@ -522,7 +596,8 @@
             <div class="content has-text-centered">
               <!-- <img src="static/images/qualitative_1.png" alt="Multi-view Generation"
                 style="width: 85%; margin-bottom: 10px;"> -->
-              <img src="static/images/qualitative_2.png" alt="Multi-view Generation"
+              <img src="static/images/qualitative_2.png"
+                alt="Multi-view Generation (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
                 style="width: 85%; margin-bottom: 10px;">
             </div>
             <p class="has-text-centered is-size-6">
@@ -536,7 +611,8 @@
           <div class="column is-full-width">
             <h4 class="title is-4">Comparison with State-of-the-Art Single-Image-to-4D methods</h4>
             <div class="content has-text-centered">
-              <img src="static/images/qualitative_3.png" alt="Comparison with SOTA"
+              <img src="static/images/qualitative_3.png"
+                alt="Comparison with SOTA (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
                 style="width: 85%; margin-bottom: 10px;">
             </div>
             <p class="has-text-centered is-size-6">
@@ -561,7 +637,8 @@
             </div>
             <div class="column is-full-width">
               <div class="content has-text-centered">
-                <img src="static/images/quantitative.png" alt="Comparison with SOTA"
+                <img src="static/images/quantitative.png"
+                  alt="Comparison with SOTA (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
                   style="width: 85%; margin-bottom: 10px;">
               </div>
             </div>
